@@ -51,7 +51,9 @@ dependencies {
     // retrofit library
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     // gson convertor
-    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
     // glide library to display pictures
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    // swipe to refresh
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }

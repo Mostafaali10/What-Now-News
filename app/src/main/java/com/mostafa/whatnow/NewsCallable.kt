@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface NewsCallable {
     // the request from the server to get the data
-    @GET("/v2/top-headlines?country=de&category=business&apiKey=be8e557ae5e1410abbe0981d7af80d13&pageSize=30")
+    @GET("/v2/top-headlines?country=us&category=general&apiKey=1baed4752b0c491bb37ccc2723f1a76a")
 
     // sending the data to dataClass to save the data in the variables
     fun getNews() : Call<News>
