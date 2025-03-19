@@ -1,4 +1,4 @@
-package com.mostafa.whatnow
+package com.mostafa.whatnow.Auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.mostafa.whatnow.MainActivity
 import com.mostafa.whatnow.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -45,11 +46,11 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.forgetPass.setOnClickListener {
-            startActivity(Intent(this,PaasswordResetActivity::class.java))
+            startActivity(Intent(this, PaasswordResetActivity::class.java))
         }
 
         binding.createoneBtn.setOnClickListener {
-            startActivity(Intent(this,SginUpActivity::class.java))
+            startActivity(Intent(this, SginUpActivity::class.java))
         }
 
 

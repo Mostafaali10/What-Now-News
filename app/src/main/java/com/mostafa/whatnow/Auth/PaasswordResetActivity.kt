@@ -1,4 +1,4 @@
-package com.mostafa.whatnow
+package com.mostafa.whatnow.Auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.mostafa.whatnow.R
 import com.mostafa.whatnow.databinding.ActivityPaasswordResetBinding
 
 class PaasswordResetActivity : AppCompatActivity() {
@@ -35,14 +36,21 @@ class PaasswordResetActivity : AppCompatActivity() {
         binding.resetBtn.setOnClickListener {
             binding.progress.isVisible= true
             val email = binding.forgetEmailEt.text.toString()
-            Firebase.auth.sendPasswordResetEmail(email)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "Check Your Email ", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this,LoginActivity::class.java))
-                        binding.progress.isVisible = false
+            if (email.isBlank()){
+                Toast.makeText(this, "Invalid Email", Toast.LENGTH_SHORT).show()
+            }
+            else {
+
+                Firebase.auth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Check Your Email ", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, LoginActivity::class.java))
+                            binding.progress.isVisible = false
+                        }
                     }
-                }
+            }
+
         }
 
 

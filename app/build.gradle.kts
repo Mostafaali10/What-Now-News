@@ -50,6 +50,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // xml card view additional
+    implementation ("androidx.cardview:cardview:1.0.0")
+    // material icon AppBar
+    implementation ("com.google.android.material:material:1.9.0")
     // retrofit library
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     // gson convertor

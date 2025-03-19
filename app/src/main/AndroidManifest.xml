@@ -16,16 +16,25 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".PaasswordResetActivity"
+            android:name=".FavoritesActivity"
             android:exported="false" />
         <activity
-            android:name=".SginUpActivity"
+            android:name=".HomeScreenActivitty"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.PaasswordResetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.SginUpActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".SettingsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

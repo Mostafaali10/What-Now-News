@@ -34,9 +34,7 @@ class MainActivity : AppCompatActivity() {
         binding.swipeRefresh.setOnRefreshListener { loadNews() }
 
     }
-
-
-
+    
     fun loadNews() {
 
         val interceptor = HttpLoggingInterceptor()

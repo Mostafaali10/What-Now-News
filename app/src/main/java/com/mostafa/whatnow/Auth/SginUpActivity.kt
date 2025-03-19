@@ -1,4 +1,4 @@
-package com.mostafa.whatnow
+package com.mostafa.whatnow.Auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.mostafa.whatnow.R
 import com.mostafa.whatnow.databinding.ActivitySginUpBinding
 
 class SginUpActivity : AppCompatActivity() {
@@ -52,7 +53,7 @@ class SginUpActivity : AppCompatActivity() {
         }
 
         binding.alreadyBtn.setOnClickListener {
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
 
@@ -67,7 +68,7 @@ class SginUpActivity : AppCompatActivity() {
                     verifyEmail()
                     Toast.makeText(this, "Signed Successfuly", Toast.LENGTH_SHORT).show()
                     Toast.makeText(this, "Hi, $name", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this,LoginActivity::class.java))
+                    startActivity(Intent(this, LoginActivity::class.java))
 
                 } else {
                     Toast.makeText(this, "${task.exception?.message}", Toast.LENGTH_SHORT).show()
