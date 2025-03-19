@@ -8,6 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.mostafa.whatnow.databinding.ActivityMainBinding
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,12 +35,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun loadNews() {
-        val retrofit = Retrofit
 
+
+    fun loadNews() {
+
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC)
+        val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
+
+        val retrofit = Retrofit
             .Builder()
             .baseUrl("https://newsapi.org")
             .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
             .build()
 
         val c = retrofit.create(NewsCallable::class.java)
