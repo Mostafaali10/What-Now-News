@@ -1,18 +1,20 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.mostafa.whatnow"
     compileSdk = 35
+
     buildFeatures{
         viewBinding = true
     }
 
     defaultConfig {
         applicationId = "com.mostafa.whatnow"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -58,4 +60,8 @@ dependencies {
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     // http for resolve api error
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    // firebase BOM
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    // Firebase Auth
+    implementation("com.google.firebase:firebase-auth")
 }
