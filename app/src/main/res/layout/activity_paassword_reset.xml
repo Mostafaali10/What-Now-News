@@ -19,12 +19,12 @@
         android:textStyle="bold" />
 
     <EditText
-        android:background="@drawable/edittext_border"
         android:id="@+id/forgetEmail_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="54dp"
+        android:background="@drawable/edittext_border"
         android:hint="  Email"
         android:inputType="textEmailAddress"
         android:textColor="@color/white"

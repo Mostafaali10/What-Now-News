@@ -13,7 +13,6 @@ class FavoritesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFavoritesBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFavoritesBinding.inflate(layoutInflater)

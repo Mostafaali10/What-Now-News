@@ -36,12 +36,12 @@ class FavoriteArticlesAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(article: Article) {
-            binding.articleNameTextView.text = article.nam
-            binding.articleLinkTextView.text = article.link
+            binding.articleNameTextView.text = article.title
+            binding.articleLinkTextView.text = article.url
 
             // Set click listener for the link
             binding.articleLinkTextView.setOnClickListener {
-                onLinkClick(article.link)
+                onLinkClick(article.url)
             }
         }
     }

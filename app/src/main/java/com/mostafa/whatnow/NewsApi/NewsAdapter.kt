@@ -14,7 +14,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.mostafa.whatnow.R
 import com.mostafa.whatnow.databinding.ArticlesListItemBinding
 
-class NewsAdapter(val a: Activity, val articles: ArrayList<Article>) :
+class NewsAdapter(private val a: Activity, private val articles: ArrayList<Article>) :
     Adapter<NewsAdapter.NewsViewHolder>() {
     class NewsViewHolder(val binding: ArticlesListItemBinding) : ViewHolder(binding.root) {
 
@@ -32,7 +32,7 @@ class NewsAdapter(val a: Activity, val articles: ArrayList<Article>) :
         holder.binding.articleText.text = articles[position].title
         Glide
             .with(holder.binding.articleImage.context)
-            .load(articles[position].urlToImage)
+            .load(articles[position].imageUrl)
             .error(R.drawable.broken_image)
             .transition(DrawableTransitionOptions.withCrossFade(1000))
             .into(holder.binding.articleImage)

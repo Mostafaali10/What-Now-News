@@ -1,14 +1,16 @@
-package com.mostafa.whatnow.NewsApi
+package com.mostafa.whatnow.Activitys
 
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
-import com.mostafa.whatnow.R
-import com.mostafa.whatnow.databinding.ActivityMainBinding
+import com.mostafa.whatnow.NewsApi.Article
+import com.mostafa.whatnow.NewsApi.News
+import com.mostafa.whatnow.NewsApi.NewsAdapter
+import com.mostafa.whatnow.NewsApi.NewsCallable
+import com.mostafa.whatnow.databinding.RecycleViewListHolderBinding
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -16,27 +18,39 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.ArrayList
 
-class MainActivity : AppCompatActivity() {
-    lateinit var binding : ActivityMainBinding
+class RecycleViewListActivity : AppCompatActivity() {
 
+    private lateinit var binding: RecycleViewListHolderBinding
+    private lateinit var sharedPreferences : SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
+
+
+        binding = RecycleViewListHolderBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val category = intent.getStringExtra("category")
+        sharedPreferences = getSharedPreferences("NewsPrefs", MODE_PRIVATE)
+        val country = sharedPreferences.getString("selected_country", "us") ?: "us"
+        Log.d("preference", country)
+
+        binding.toolbarBackBtn.setOnClickListener {
+            val i = Intent(this,HomeScreenActivity::class.java)
+            startActivity(i)
+            finish()
         }
-        loadNews()
-        binding.swipeRefresh.setOnRefreshListener { loadNews() }
+        binding.toolbarHeaderTv.text = category?.uppercase() ?: "GENERAL"
+
+
+        loadNews(category = category, country = country)
 
     }
 
-    fun loadNews() {
+
+    private fun loadNews(
+        category: String?,
+        country: String
+    ) {
 
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC)
@@ -50,12 +64,15 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val c = retrofit.create(NewsCallable::class.java)
-        c.getNews().enqueue(object : Callback<News> {
+        c.getGeneralNews(
+            category = category,
+            country = country
+        ).enqueue(object : Callback<News> {
             override fun onResponse(call: Call<News>, response: Response<News>) {
                 if (response.isSuccessful) {
                     val news = response.body()
                     val articles = news?.articles!!
-                    articles.removeAll{
+                    articles.removeAll {
                         it.title == "[Removed]"
                     }
                     Log.d("trace", "Articles: $articles")
@@ -66,7 +83,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<News>, t: Throwable) {
-                Log.d("trace" , "Error :${t.message}" )
+                Log.d("trace", "Error :${t.message}")
                 binding.progress.isVisible = false
                 binding.swipeRefresh.isRefreshing = false
             }
@@ -74,9 +91,9 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun showNews(articles : ArrayList<Article>){
+    fun showNews(articles: ArrayList<Article>) {
         val adapter = NewsAdapter(this, articles)
-       binding.newsList.adapter = adapter
-
+        binding.newsList.adapter = adapter
     }
+
 }

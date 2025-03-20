@@ -19,7 +19,7 @@
             android:background="#4A90E2"
             app:title="Favorites"
             app:titleTextColor="@android:color/white"
-            app:navigationIcon="drawable/ic_arrow_back" />
+            app:navigationIcon="@drawable/ic_arrow_back" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
