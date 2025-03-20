@@ -16,10 +16,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".FavoritesActivity"
+            android:name=".Activitys.FavoritesActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeScreenActivitty"
+            android:name=".Activitys.HomeScreenActivitty"
             android:exported="false" />
         <activity
             android:name=".Auth.LoginActivity"
@@ -31,10 +31,10 @@
             android:name=".Auth.SginUpActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activitys.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".NewsApi.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

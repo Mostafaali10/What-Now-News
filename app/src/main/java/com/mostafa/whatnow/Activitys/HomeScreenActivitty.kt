@@ -1,4 +1,4 @@
-package com.mostafa.whatnow
+package com.mostafa.whatnow.Activitys
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.mostafa.whatnow.Auth.LoginActivity
+import com.mostafa.whatnow.R
 import com.mostafa.whatnow.databinding.ActivityHomeScreenActivittyBinding
 
 

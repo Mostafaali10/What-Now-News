@@ -1,4 +1,4 @@
-package com.mostafa.whatnow
+package com.mostafa.whatnow.NewsApi
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.mostafa.whatnow.R
 import com.mostafa.whatnow.databinding.ActivityMainBinding
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding.swipeRefresh.setOnRefreshListener { loadNews() }
 
     }
-    
+
     fun loadNews() {
 
         val interceptor = HttpLoggingInterceptor()

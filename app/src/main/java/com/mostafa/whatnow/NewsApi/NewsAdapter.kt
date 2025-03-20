@@ -1,4 +1,4 @@
-package com.mostafa.whatnow
+package com.mostafa.whatnow.NewsApi
 
 
 import android.app.Activity
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.mostafa.whatnow.R
 import com.mostafa.whatnow.databinding.ArticlesListItemBinding
 
 class NewsAdapter(val a: Activity, val articles: ArrayList<Article>) :
