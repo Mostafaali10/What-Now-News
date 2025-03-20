@@ -1,4 +1,4 @@
-package com.mostafa.whatnow
+package com.mostafa.whatnow.Activitys
 
 import android.content.Context
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.mostafa.whatnow.R
 import com.mostafa.whatnow.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {

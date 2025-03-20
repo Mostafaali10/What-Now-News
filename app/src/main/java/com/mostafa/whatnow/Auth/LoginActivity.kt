@@ -11,7 +11,7 @@ import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.mostafa.whatnow.MainActivity
+import com.mostafa.whatnow.NewsApi.MainActivity
 import com.mostafa.whatnow.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {

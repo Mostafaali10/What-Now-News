@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <ImageView
             android:id="@+id/article_image"
             android:layout_width="match_parent"
@@ -22,6 +23,8 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
             tools:src="@tools:sample/backgrounds/scenic" />
+
+
 
         <View
             android:id="@+id/shadow_view"
@@ -41,6 +44,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/shadow_view"
             tools:text="@tools:sample/full_names" />
+
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/share_fab"

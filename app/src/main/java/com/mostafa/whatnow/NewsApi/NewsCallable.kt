@@ -1,4 +1,4 @@
-package com.mostafa.whatnow
+package com.mostafa.whatnow.NewsApi
 
 import retrofit2.Call
 import retrofit2.http.GET
