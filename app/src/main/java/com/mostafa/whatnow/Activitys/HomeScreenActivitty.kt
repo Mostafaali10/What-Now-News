@@ -171,6 +171,7 @@ class HomeScreenActivity : AppCompatActivity() {
                 }
             }
 
+
             override fun onFailure(call: Call<News>, t: Throwable) {
                 Log.d("trace", "Error :${t.message}")
                 val articles = ArrayList<Article>()
