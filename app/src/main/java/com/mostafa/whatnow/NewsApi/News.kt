@@ -13,8 +13,11 @@ data class Article(
     val url: String = "",
     @SerializedName("urlToImage")
     val imageUrl: String = "",
-    val isFavorite: Boolean = false
-) {
-}
+)
 
+
+data class FavArticle(
+    val title: String = "",
+    val url: String = ""
+)
 

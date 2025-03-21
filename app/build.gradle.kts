@@ -8,7 +8,7 @@ android {
     namespace = "com.mostafa.whatnow"
     compileSdk = 35
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 
@@ -54,9 +54,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     // xml card view additional
-    implementation ("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.cardview:cardview:1.0.0")
     // material icon AppBar
-    implementation ("com.google.android.material:material:1.9.0")
+    implementation("com.google.android.material:material:1.9.0")
     // retrofit library
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     // gson convertor
@@ -71,5 +71,5 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     // Firebase Auth
     implementation("com.google.firebase:firebase-auth")
-    implementation ("com.google.firebase:firebase-firestore:24.10.3")
+    implementation("com.google.firebase:firebase-firestore:24.10.3")
 }

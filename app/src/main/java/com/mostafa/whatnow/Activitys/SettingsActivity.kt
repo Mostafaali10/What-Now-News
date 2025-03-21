@@ -17,6 +17,8 @@ class SettingsActivity : AppCompatActivity() {
     // List of countries with their display names and News API country codes
     private val countries = listOf(
         Pair("United States", "us"),
+        Pair("Germany", "de"),
+        Pair("Egypt","eg"),
         Pair("Great Britain", "gb"),
         Pair("Canada", "ca")
     )
@@ -105,7 +107,11 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         // Show a message to the user confirming the save
-        Toast.makeText(this, "Country saved: ${countries[selectedPosition].first}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            this,
+            "Country saved: ${countries[selectedPosition].first}",
+            Toast.LENGTH_SHORT
+        ).show()
 
     }
 }

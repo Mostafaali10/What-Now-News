@@ -25,8 +25,9 @@
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="54dp"
         android:background="@drawable/edittext_border"
-        android:hint="  Email"
+        android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingStart="12dp"
         android:textColor="@color/white"
         android:textColorHint="#A0A0A0" />
 
@@ -35,18 +36,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
+
         android:layout_marginTop="16dp"
         android:background="@drawable/edittext_border"
-        android:hint="  Password"
+        android:hint="Password"
         android:inputType="textPassword"
+        android:paddingStart="12dp"
+        android:textColor="@color/white"
         android:textColorHint="#A0A0A0" />
 
     <TextView
         android:id="@+id/forget_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
         android:text="forget_your_password?"
         android:textColor="#D3D3D3" />
 
@@ -73,12 +77,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="64dp"
         android:text="Not User?"
         android:textColor="@color/white"
-        android:layout_gravity="center"
         android:textSize="22dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/createone_btn"

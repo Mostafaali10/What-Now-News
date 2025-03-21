@@ -25,13 +25,11 @@
             tools:src="@tools:sample/backgrounds/scenic" />
 
 
-
         <View
             android:id="@+id/shadow_view"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:alpha="0.4"
-            android:background="@color/black"
+            android:layout_height="128dp"
+            android:background="@drawable/inner_card_shadow"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
@@ -39,25 +37,57 @@
             style="@style/TVstyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="@id/shadow_view"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/shadow_view"
             tools:text="@tools:sample/full_names" />
 
 
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/share_fab"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/share_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:backgroundTint="@color/white"
-            android:src="@drawable/share"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="8dp"
+            android:backgroundTint="#A9D2D2D2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
+            <ImageButton
+                android:id="@+id/share_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/share"
+                android:backgroundTint="#2B2B2B"
+                android:contentDescription="@string/add_to_favorite"
+                android:padding="20dp" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            android:backgroundTint="#B9FFE3E3"
+            app:layout_constraintTop_toBottomOf="@+id/share_card"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageButton
+                android:id="@+id/add_to_fav_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/fav_icon"
+                android:backgroundTint="#FF7878"
+                android:contentDescription="@string/add_to_favorite"
+                android:padding="20dp" />
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
