@@ -23,6 +23,7 @@ class NewsAdapter(private val a: Activity, private val articles: ArrayList<Artic
     class NewsViewHolder(val binding: ArticlesListItemBinding) : ViewHolder(binding.root)
 
     private val _db: FirebaseFirestore = FirebaseFirestore.getInstance()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val b = ArticlesListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return NewsViewHolder(b)
@@ -30,8 +31,8 @@ class NewsAdapter(private val a: Activity, private val articles: ArrayList<Artic
 
     override fun getItemCount() = articles.size
 
-
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
+
         holder.binding.articleText.text = articles[position].title
         Glide
             .with(holder.binding.articleImage.context)
@@ -75,4 +76,6 @@ class NewsAdapter(private val a: Activity, private val articles: ArrayList<Artic
         }
 
     }
+
+
 }

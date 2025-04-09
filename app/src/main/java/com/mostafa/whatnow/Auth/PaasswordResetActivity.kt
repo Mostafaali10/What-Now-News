@@ -22,6 +22,7 @@ class PaasswordResetActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         binding = ActivityPaasswordResetBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -30,17 +31,21 @@ class PaasswordResetActivity : AppCompatActivity() {
             insets
         }
 
+
+
        // Firebase Auth
         auth = Firebase.auth
 
         binding.resetBtn.setOnClickListener {
+
             binding.progress.isVisible= true
             val email = binding.forgetEmailEt.text.toString()
+
             if (email.isBlank()){
                 Toast.makeText(this, "Invalid Email", Toast.LENGTH_SHORT).show()
             }
-            else {
 
+            else {
                 Firebase.auth.sendPasswordResetEmail(email)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
@@ -52,10 +57,6 @@ class PaasswordResetActivity : AppCompatActivity() {
             }
 
         }
-
-
-
-
 
     }
 }

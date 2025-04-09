@@ -12,6 +12,8 @@ class FavoritesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFavoritesBinding
     private lateinit var _db: FirebaseFirestore
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -23,6 +25,7 @@ class FavoritesActivity : AppCompatActivity() {
             startActivity(i)
             finishAffinity()
         }
+
     }
 
     private fun loadData() {

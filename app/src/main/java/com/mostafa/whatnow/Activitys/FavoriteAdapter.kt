@@ -53,5 +53,4 @@ class FavoriteAdapter(private val a: Activity, private val articles: MutableList
 
     }
 
-
 }
